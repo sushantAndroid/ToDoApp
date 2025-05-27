@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.example.todoapp.data.Todo
@@ -12,8 +13,8 @@ import com.example.todoapp.data.Todo
 @Composable
 fun TodoApp() {
     // All state is managed at the top level
-    var todos by remember { mutableStateOf(listOf<Todo>()) }
-    var newTodoText by remember { mutableStateOf("") }
+    var todos by rememberSaveable { mutableStateOf(listOf<Todo>()) }
+    var newTodoText by rememberSaveable { mutableStateOf("") }
 
     Column(
         modifier = Modifier.fillMaxSize(),
